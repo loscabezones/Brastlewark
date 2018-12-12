@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+//fontAswome
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // importar rutas
 import { AppRoutingModule } from './app-routing.module';
@@ -8,24 +12,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-
-// importar servicios
-import { BrastlewarkService } from './core/servicios/brastlewark.service';
 import { FooterComponent } from './components/footer/footer.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { LoadingComponent } from './components/loading/loading.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    CardsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [
-    BrastlewarkService
   ],
   bootstrap: [AppComponent]
 })
