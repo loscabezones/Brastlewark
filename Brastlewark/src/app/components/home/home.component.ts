@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
     //comprobamos herrores de conexion
     this.brastlewarkService.erroresApi().subscribe(
       (error:any) =>{
+      if(error === true){this.loading = false}
       this.error = error;
       this.mensajeError = 'No se ha podido establecer conexion con los datos'
     },
@@ -32,10 +33,8 @@ export class HomeComponent implements OnInit {
     ()=>{ 
     });
 
-    //nos subscribimos a los datos recibidos. si no hay errores de conexion
-    if (!this.error){
-      this.getGnomes()
-    }
+    //nos subscribimos a los datos recibidos
+      this.getGnomes();
 
   }
 
@@ -43,7 +42,6 @@ export class HomeComponent implements OnInit {
     this.brastlewarkService.getGnomes().subscribe(
       (gnomes: any) => {
         if(!(gnomes === null)){this.loading = false;}
-        console.log(gnomes);
         this.gnomes = gnomes;
       },
       err => { },

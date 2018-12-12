@@ -15,4 +15,8 @@ export class CardsComponent implements OnInit {
   ngOnInit() {
   }
 
+  ShowGnome(item){
+    console.log(item);
+  }
+
 }

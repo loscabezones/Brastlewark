@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { SearchComponent } from './components/search/search.component';
+import { DetailsComponent } from './components/details/details.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { LoadingComponent } from './components/loading/loading.component';
     HomeComponent,
     FooterComponent,
     CardsComponent,
-    LoadingComponent
+    LoadingComponent,
+    SearchComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
