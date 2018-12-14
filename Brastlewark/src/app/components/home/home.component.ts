@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(private brastlewarkService: BrastlewarkService) { }
 
   ngOnInit() {
-    this.loading = true
+    this.loading = true;
 
     //conseguimos los datos de la api
     this.brastlewarkService.getApiGnomes();
@@ -43,6 +43,9 @@ export class HomeComponent implements OnInit {
       (gnomes: any) => {
         if(!(gnomes === null)){this.loading = false;}
         this.gnomes = gnomes;
+        if (typeof this.gnomes !== 'undefined') {
+          
+        }
       },
       err => { },
       () => { }

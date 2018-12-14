@@ -14,6 +14,10 @@ export class BrastlewarkService {
 
   constructor(private http: HttpClient) { }
 
+  getgnome(id:number){
+    console.log(this.gnomeList[id]);
+  }
+
   /** 
    *  optencion de los valores del observable gnomes
    */
@@ -50,12 +54,11 @@ export class BrastlewarkService {
    * @param filter // elemento de filtro
    * @param value  // valor del filtro
    */
-  getFilter(value) {
+  getFilter(value:string) {
     let filtrado = this.gnomeList.filter(data => {
       return data.name.toLowerCase().indexOf(value.toLowerCase()) + 1;
     });
     this.gnomes.next(filtrado);
-    console.log(filtrado);
   }
 
 

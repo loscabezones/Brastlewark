@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BrastlewarkService } from 'src/app/core/servicios/brastlewark.service';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  gnome: any = {};
+
+  constructor( 
+    private activatedRoute:ActivatedRoute,
+    private brastlewarkService:BrastlewarkService
+     ) { }
 
   ngOnInit() {
+
+    this.activatedRoute.params.subscribe(params =>{
+          console.log(params.id)
+          this.brastlewarkService.getgnome(params.id);
+      });
+
   }
 
 }
