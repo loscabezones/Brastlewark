@@ -19,10 +19,34 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
 
-    //conseguimos los datos de la api
-    this.brastlewarkService.getApiGnomes();
+    //nos subscribimos a los datos recibidos
+    this.getGnomes();
 
     //comprobamos herrores de conexion
+    this.geterror();
+
+
+  }
+
+  getGnomes() {
+    this.brastlewarkService.getGnomes().subscribe(
+      (gnomes: any) => {
+
+        //si recebimos null, llamamos al servicio que nos conecta con los datos
+        if((gnomes === null)){ this.brastlewarkService.getApiGnomes();}
+
+        //si contiene dato quitamos el spiner
+        if(!(gnomes === null)){this.loading = false;}
+
+        //guardamos el contenido
+        this.gnomes = gnomes;
+      },
+      err => { },
+      () => { }
+    );
+  }
+
+  geterror(){
     this.brastlewarkService.erroresApi().subscribe(
       (error:any) =>{
       if(error === true){this.loading = false}
@@ -32,24 +56,6 @@ export class HomeComponent implements OnInit {
     err=>{},
     ()=>{ 
     });
-
-    //nos subscribimos a los datos recibidos
-      this.getGnomes();
-
-  }
-
-  getGnomes() {
-    this.brastlewarkService.getGnomes().subscribe(
-      (gnomes: any) => {
-        if(!(gnomes === null)){this.loading = false;}
-        this.gnomes = gnomes;
-        if (typeof this.gnomes !== 'undefined') {
-          
-        }
-      },
-      err => { },
-      () => { }
-    );
   }
 
 

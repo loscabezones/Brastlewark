@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { BrastlewarkService } from 'src/app/core/servicios/brastlewark.service';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  selector: 'app-gnome',
+  templateUrl: './gnome.component.html',
+  styleUrls: ['./gnome.component.scss']
 })
-export class DetailsComponent implements OnInit {
+export class GnomeComponent implements OnInit {
 
   gnome: any = {};
 

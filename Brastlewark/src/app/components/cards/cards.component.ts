@@ -17,7 +17,7 @@ export class CardsComponent implements OnInit {
   }
 
   ShowGnome(item){
-    this.router.navigate(['/detalles', item.id]);
+    this.router.navigate(['/gnome', item.id]);
   }
 
 }
