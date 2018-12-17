@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     //nos subscribimos a los datos recibidos
     this.getGnomes();
 
-    //comprobamos herrores de conexion
+    //comprobamos errores de conexion
     this.geterror();
 
 
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
       (gnomes: any) => {
 
         //si recebimos null, llamamos al servicio que nos conecta con los datos
-        if((gnomes === null)){ this.brastlewarkService.getApiGnomes();}
+        if((gnomes === null)){ this.brastlewarkService.getApiGnomes(); console.log("api llamada")}
 
         //si contiene dato quitamos el spiner
         if(!(gnomes === null)){this.loading = false;}

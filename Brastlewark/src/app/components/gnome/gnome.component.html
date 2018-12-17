@@ -1,3 +1,30 @@
-<p>
-  details works!
-</p>
+<app-loading *ngIf="loading" class="m-5"></app-loading>
+
+
+<div *ngIf="!loading" class="gnome-detail-custom">
+  <h1> {{ gnome.name }} <small> ({{ gnome.age }} Años)</small></h1>
+  <hr>
+  <div class="row gnome-detail-row-custom">
+    <div class="col-md-6">
+      <img [src]="gnome.thumbnail" class="img-fluid" [alt]="">
+      <br><br>
+      <a [routerLink]="['/home']" class="btn btn-outline-primary btn-block">Regresar</a>
+    </div>
+    <div class="col-md-6">
+      <h3>Información</h3>
+     
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">color de pelo: {{ gnome.hair_color }}
+            <span class="hair_color" [ngStyle]="{'background-color': gnome.hair_color}"></span>
+          </li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      <div>
+        <img src="" class="img-fluid-custom">
+      </div>
+    </div>
+  </div>
+</div>
