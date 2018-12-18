@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
       (gnomes: any) => {
 
         //si recebimos null, llamamos al servicio que nos conecta con los datos
-        if((gnomes === null)){ this.brastlewarkService.getApiGnomes(); console.log("api llamada")}
+        if((gnomes === null)){ this.brastlewarkService.getApiGnomes();}
 
         //si contiene dato quitamos el spiner
         if(!(gnomes === null)){this.loading = false;}

@@ -32,7 +32,6 @@ export class GnomeComponent implements OnInit, OnDestroy {
     this.getgnome();
 
     //llamamos a la informacion del nomo solicitado
-    console.log("se subscrive a la informacion del nomo");
     this.getInfoGnome();
 
   }

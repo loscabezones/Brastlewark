@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AppModule } from 'src/app/app.module';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -24,12 +23,10 @@ export class BrastlewarkService {
 
     if (this.gnomeList[id] === undefined) {
       this.getApiGnomes();
-      console.log("llamamos a la api")
     }
 
     this.erroresApi().subscribe(error => {
       if (error === false) {
-        console.log("rellenamos la info")
         this.gnome.next(this.gnomeList[id]);
       }
     });
