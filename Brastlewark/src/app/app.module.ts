@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+
 //fontAswome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -34,7 +35,7 @@ import { GnomeComponent } from './components/gnome/gnome.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   providers: [
   ],
