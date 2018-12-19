@@ -2,9 +2,17 @@
 
 <app-loading *ngIf="loading" class="m-5"></app-loading>
 
-<div *ngIf="error"  class="alert alert-danger animated fadeIn">
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
     <h3>Error</h3>
     <p>{{ mensajeError }}</p>
 </div>
 
 <app-cards [items]="gnomes"></app-cards>
+
+<div class="row row-button-custom"  (click)="ShowGnomes()">
+    <div class="col">
+        <button *ngIf="gnomes.length < maxGnomes" type="button" class="btn btn-outline-primary btn-lg btn-block">
+            Mostrar más Nomos
+        </button>
+    </div>
+</div>

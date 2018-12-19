@@ -10,6 +10,10 @@ import { BrastlewarkService } from 'src/app/core/servicios/brastlewark.service';
 export class HomeComponent implements OnInit {
 
   gnomes: any[] = [];
+  allGnomes: any[] = [];
+  maxGnomes: number;
+  numberOfGnomes: number = 10;
+  sumGnomes: number;
   error:boolean = false;
   mensajeError: string;
   loading: boolean;
@@ -39,7 +43,17 @@ export class HomeComponent implements OnInit {
         if(!(gnomes === null)){this.loading = false;}
 
         //guardamos el contenido
-        this.gnomes = gnomes;
+        if (!(gnomes === null)){
+        this.allGnomes = gnomes;
+        this.maxGnomes = this.allGnomes.length;
+        }
+
+        //mostramos los primeros 10 elemenots de los nomos
+        if (!(gnomes === null)){
+        this.sumGnomes = 10;
+        this.gnomes = gnomes.slice(0, this.numberOfGnomes);
+        }
+
       },
       err => { },
       () => { }
@@ -56,6 +70,14 @@ export class HomeComponent implements OnInit {
     err=>{},
     ()=>{ 
     });
+  }
+
+  /**
+   * Funcion que actualiza el array de los datos visibles con mas datos
+   */
+  ShowGnomes(){
+    this.sumGnomes += 100;
+    this.gnomes = this.allGnomes.slice(0, this.sumGnomes);
   }
 
 
