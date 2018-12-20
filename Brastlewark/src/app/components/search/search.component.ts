@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   }
 
   searchGnome( value:string ){
-     this.brastlewarkService.getFilter(value);
+     this.brastlewarkService.getSearch(value);
   }
 
 }

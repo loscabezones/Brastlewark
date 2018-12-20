@@ -11,6 +11,7 @@ export class BrastlewarkService {
   private gnomes = new BehaviorSubject(null);
   private gnome = new BehaviorSubject(null);
   gnomeList: any = [];
+  filtrado: any = [];
 
   constructor(private http: HttpClient) { }
 
@@ -42,6 +43,7 @@ export class BrastlewarkService {
       (gnomes: any) => {
         this.gnomes.next(gnomes.Brastlewark);
         this.gnomeList = gnomes.Brastlewark;
+        this.filtrado =  this.gnomeList;
         this.errorApi.next(false);
       },
       err => {
@@ -58,12 +60,31 @@ export class BrastlewarkService {
    * @param filter // elemento de filtro
    * @param value  // valor del filtro
    */
-  getFilter(value: string) {
-    let filtrado = this.gnomeList.filter(data => {
+  getSearch(value: string) {
+    let filtrado = this.filtrado.filter(data => {
       return data.name.toLowerCase().indexOf(value.toLowerCase()) + 1;
     });
     this.gnomes.next(filtrado);
   }
+
+  /**
+   * Metodo que filtra el resultado de los nomos
+   * Segun el objeto pasado a la funcion
+   * @param data / objeto con las propiedades y valores a filtrar
+   */
+  getFilter(data:object){
+
+
+      let filtrado = this.filtrado.filter(element => {
+        return data['hair'] ? (element.hair_color === data['hair']) : true;
+            
+      });
+      this.gnomes.next(filtrado);
+
+
+  }
+
+
 
 
   /** 
@@ -86,6 +107,10 @@ export class BrastlewarkService {
    */
   getInfoGnome() {
     return this.gnome.asObservable();
+  }
+
+  getGnomeList(){
+    return this.gnomeList;
   }
 
 

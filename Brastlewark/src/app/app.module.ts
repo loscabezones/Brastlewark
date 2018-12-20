@@ -18,6 +18,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { SearchComponent } from './components/search/search.component';
 import { GnomeComponent } from './components/gnome/gnome.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { GnomeComponent } from './components/gnome/gnome.component';
     CardsComponent,
     LoadingComponent,
     SearchComponent,
-    GnomeComponent
+    GnomeComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
