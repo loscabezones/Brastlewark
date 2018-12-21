@@ -10,10 +10,17 @@ export class BrastlewarkService {
   private errorApi = new BehaviorSubject(null);
   private gnomes = new BehaviorSubject(null);
   private gnome = new BehaviorSubject(null);
+  private controlFilter = new BehaviorSubject(false);
   gnomeList: any = [];
   filtrado: any = [];
+  
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+   }
+
+  getControlFilter(){
+    return this.controlFilter.asObservable();
+  }
 
   /**
    * Funcion que recibe un id y busca ese nomo en el array
@@ -61,10 +68,31 @@ export class BrastlewarkService {
    * @param value  // valor del filtro
    */
   getSearch(value: string) {
+
+    //si el campo esta vacio buscamos en todos los nomos
+    if(value.length === 0 ){
+      this.filtrado = this.gnomeList;
+    }
+
     let filtrado = this.filtrado.filter(data => {
       return data.name.toLowerCase().indexOf(value.toLowerCase()) + 1;
     });
+
+    //si no encontramos nada mostramos el mensaje
+    if(filtrado.length === 0){
+      this.controlFilter.next(true);
+    }else{
+      this.controlFilter.next(false);
+    }
+
+    //actualizamos los valores mostrados
     this.gnomes.next(filtrado);
+
+     //actualizamos los filtros
+     this.filtrado = filtrado;
+
+    
+
   }
 
   /**
@@ -74,7 +102,13 @@ export class BrastlewarkService {
    */
   getFilter(data:object){
 
-    console.log(data);
+    //si se limpia el filtro se rellena los resultados con todos los nomos
+
+      if (data['clean'] === true){
+        this.filtrado = this.gnomeList;
+      }
+
+    //se aplica el filtro a los resultados
 
       let filtrado = this.filtrado.filter(element => {
         return     (data['hair'] ? element.hair_color === data['hair'] : true) && 
@@ -82,8 +116,14 @@ export class BrastlewarkService {
                    (data['age'] ?  element.age === parseInt(data['age']) : true);
             
       });
+      
 
-      console.log(filtrado);
+      if(filtrado.length === 0){
+        this.controlFilter.next(true);
+      }else{
+        this.controlFilter.next(false);
+      }
+
       this.gnomes.next(filtrado);
 
 

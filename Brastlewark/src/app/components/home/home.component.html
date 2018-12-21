@@ -5,6 +5,11 @@
 
 <app-error *ngIf="error" [mensajeError]="mensajeError"></app-error>
 
+<div *ngIf="control"  class="alert alert-info m-5 animated fadeIn">
+        <h3>Sin coincidencias</h3>
+        <p>Con la busqueda y filtros actual no se enceuntra ningun Nomo</p>
+</div>
+
 <app-cards [items]="gnomes"></app-cards>
 
 <div class="row row-button-custom"  (click)="ShowGnomes()">

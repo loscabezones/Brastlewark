@@ -67,7 +67,6 @@ export class GnomeComponent implements OnInit, OnDestroy {
 
    this.subscription = this.brastlewarkService.getInfoGnome().subscribe(data => {
       this.gnome = data;
-      console.log(this.gnome)
       if (!(this.gnome === null)) { this.loading = false; }
     });
 

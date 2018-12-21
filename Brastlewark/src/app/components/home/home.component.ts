@@ -9,6 +9,7 @@ import { BrastlewarkService } from 'src/app/core/servicios/brastlewark.service';
 })
 export class HomeComponent implements OnInit {
 
+  control: boolean = false;
   gnomes: any[] = [];
   allGnomes: any[] = [];
   maxGnomes: number;
@@ -32,6 +33,8 @@ export class HomeComponent implements OnInit {
     //comprobamos errores de conexion
     this.geterror();
 
+    //control de filtro
+    this.controlFilter();
 
   }
 
@@ -60,6 +63,7 @@ export class HomeComponent implements OnInit {
         if (!(gnomes === null)) {
           this.sumGnomes = 10;
           this.gnomes = gnomes.slice(0, this.numberOfGnomes);
+          console.log(this.gnomes);
         }
 
       },
@@ -164,6 +168,12 @@ export class HomeComponent implements OnInit {
     }
 
     return result;
+  }
+
+  controlFilter(){
+    this.brastlewarkService.getControlFilter().subscribe(element=>{
+      this.control = element;
+    });
   }
 
 

@@ -29,7 +29,8 @@ export class FilterComponent implements OnInit {
     this.dataFilter = {
       hair: "",
       professions: "",
-      age: ""
+      age: 0,
+      clean: false
     }
 
     //texto por defecto de los filtros//
@@ -55,14 +56,21 @@ export class FilterComponent implements OnInit {
       this.ShowColor = true;
     }
 
+    this.dataFilter['clean'] = false;
     this.brastlewarkService.getFilter(this.dataFilter);
 
   }
 
   filterProfessions(data: string) {
+
     this.dataFilter['professions'] = data;
     this.textProfessions = data;
 
+    if (data === '') {
+      this.textProfessions = this.text2;
+    }
+
+    this.dataFilter['clean'] = false;
     this.brastlewarkService.getFilter(this.dataFilter);
   }
 
@@ -70,6 +78,28 @@ export class FilterComponent implements OnInit {
     this.dataFilter['age'] = data;
     this.textAges = data.toString();
 
+    if (data === 0) {
+      this.textAges = this.text3;
+    }
+    
+    this.dataFilter['clean'] = false;
+    this.brastlewarkService.getFilter(this.dataFilter);
+  }
+
+  //Funcion que resetea el filtro y muestra todos los nomos
+  resetFilter(){
+    this.dataFilter['age'] = 0;
+    this.dataFilter['professions'] = '';
+    this.dataFilter['hair'] = '';
+    this.dataFilter['clean'] = true;
+    this.colorin = '#6c757d';
+    this.ShowColor = false;
+
+    this.textHairColors = this.text1;
+    this.textProfessions = this.text2;
+    this.textAges = this.text3;
+
+    this.brastlewarkService.getSearch('');
     this.brastlewarkService.getFilter(this.dataFilter);
   }
 

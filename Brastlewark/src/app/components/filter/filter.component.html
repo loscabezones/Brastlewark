@@ -24,6 +24,9 @@
         {{textProfessions}}
       </button>
       <div class="dropdown-menu menu-custom" aria-labelledby="profesion">
+        <a class="dropdown-item" (click)="filterProfessions('')">
+          -- Sin filtro --
+        </a>
         <a class="dropdown-item" *ngFor="let prof of professions" (click)="filterProfessions(prof)">
           {{prof}}
         </a>
@@ -32,16 +35,23 @@
 
     <!-- Filtro por edad -->
     <span>
-        <button id="age" type="button" class="btn btn-secondary dropdown-toggle button-filter-custom" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          {{textAges}}
-        </button>
-        <div id="filterAge" class="dropdown-menu menu-custom" aria-labelledby="age">
-          <a class="dropdown-item" *ngFor="let age of ages" (click)="filterAge(age)">
-            {{age}}
-          </a>
-        </div>
-      </span>
+      <button id="age" type="button" class="btn btn-secondary dropdown-toggle button-filter-custom" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        {{textAges}}
+      </button>
+      <div id="filterAge" class="dropdown-menu menu-custom" aria-labelledby="age">
+        <a class="dropdown-item" (click)="filterAge(0)">
+          -- Sin filtro --
+        </a>
+        <a class="dropdown-item" *ngFor="let age of ages" (click)="filterAge(age)">
+          {{age}}
+        </a>
+      </div>
+    </span>
 
+    <!-- Reseteo de filtro -->
+    <span>
+      <button type="button" class="btn btn-danger button-filter-custom" (click)="resetFilter()">Resetear Filtros</button>
+    </span>
   </div>
 </div>
