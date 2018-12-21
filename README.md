@@ -11,4 +11,12 @@ Aplicación web que mediante una API, que nos devuelve un listado de nomos, mues
   Ejemplo: Página Home
   
   ![Home](/img-documentacion/Home.PNG "Home")
-  ![Home Mobile](/img-documentacion/Home-Mobile.PNG "Home Mobile")
+  
+  Ejemplo: Pagina Gnome
+  
+  ![Gnome](/img-documentacion/Gnome.PNG "Gnome")
+  
+  Ejemplo: Paginas Mobile.
+  
+  ![Home](/img-documentacion/Home-Mobile.PNG "Home")
+  ![Gnome](/img-documentacion/Gnome-Mobile.PNG "Gnome")
