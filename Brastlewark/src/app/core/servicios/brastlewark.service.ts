@@ -120,7 +120,6 @@ export class BrastlewarkService {
      //comprobamos estado del filtro
      let filtro = this.getDataFilter()
      if(!(filtro === undefined)){
-       console.log(filtro);
        this.getFilter(filtro);
      }
 
