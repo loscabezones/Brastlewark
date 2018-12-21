@@ -1,10 +1,13 @@
 # Brastlewark
-Aplicacíon web que mediante una api, que nos devuelve informacíon de un listado de nomos, muestra los nomos, con un filtro y buscador, y permite visualizar por separado la informacion de cada nomo deseado.
+
+Aplicación web que mediante una API, que nos devuelve un listado de nomos, muestra información de estos nomos. El conjunto de nomos se puede filtrar por características y a través de un buscador. Se puede visualizar el detalle de cada nomo. Todo el contenido de la web es responsive.
 
 ## Vistas
 
-  La aplicacion esta formada por dos vistas (2 paginas de una web). La vista home y la vista Gnome,
-  La pagina Home es nuestra pagina de inicio que muestra todos los nomos junto a un buscador y aun filtro.
-  La pagina Gnome muestra en detalle la informacion del nomo seleccionado en la pagina Home
+  La aplicación está formada por dos vistas (2 páginas de una web). La vista Home y la vista Gnome.
+  La página Home es la página de inicio que muestra todos los nomos junto a un buscador y a un filtro.
+  La página Gnome muestra en detalle la información del nomo seleccionado en la página Home.
   
-  ejemplo: Pagina Home
+  ejemplo: Página Home
+  
+  ![Home](/img-documentacion/Home.PNG "Home")
