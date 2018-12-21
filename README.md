@@ -8,6 +8,6 @@ Aplicación web que mediante una API, que nos devuelve un listado de nomos, mues
   La página Home es la página de inicio que muestra todos los nomos junto a un buscador y a un filtro.
   La página Gnome muestra en detalle la información del nomo seleccionado en la página Home.
   
-  ejemplo: Página Home
+  Ejemplo: Página Home
   
   ![Home](/img-documentacion/Home.PNG "Home")
