@@ -52,3 +52,23 @@ Aplicación web que mediante una API, que nos devuelve un listado de nomos, mues
   http://localhost:4200
   
   
+  ## Carasteristicas de la aplicacíon
+  
+     * Control de errores cuando no podemos obtener datos de la Api
+     * Una unica llamada a la API para obtener todos los datos
+     * Carga dinamica de los elementos en pantalla
+     * Buscador 
+     * Filtrado por caracteristicas
+     * Animaciones al pasar el raton
+     * Animación de carga de datos con un Spiner
+     * Transacciones suabes al cargar los elementos
+     * Aplicación responsive
+     * Muestra de colores dinamicamente segun el valor del color
+     * Separacion de codigo en componentes reutilizables
+     * Control de rutas
+   
+   ## Imagenes de la Aplicación
+   
+   Control de errores:
+   
+  ![Gnome](/img-documentacion/Gnome.PNG "Gnome")
