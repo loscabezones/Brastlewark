@@ -8,9 +8,12 @@ import { BrastlewarkService } from 'src/app/core/servicios/brastlewark.service';
 })
 export class SearchComponent implements OnInit {
 
+  textoBuscador:string;
+
   constructor( private brastlewarkService: BrastlewarkService) { }
 
   ngOnInit() {
+    this.textoBuscador = "Buscar Nomo";
   }
 
   searchGnome( value:string ){
