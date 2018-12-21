@@ -1,0 +1,57 @@
+<div class="row row-filter-custum">
+  <div class="col col-custom-filter">
+
+    <!-- Filtro por color -->
+    <span>
+      <button id="hairColor" type="button" class="btn btn-secondary dropdown-toggle button-filter-custom" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        {{textHairColors}} <span *ngIf="ShowColor" class="hair_colorin" [ngStyle]="{'background-color': colorin}"></span>
+      </button>
+      <div class="dropdown-menu menu-custom" aria-labelledby="hairColor">
+        <a class="dropdown-item" (click)="filterColor('')">
+          -- Sin filtro --
+        </a>
+        <a class="dropdown-item" *ngFor="let color of hairColors" (click)="filterColor(color)">
+          {{color}} <span class="hair_color" [ngStyle]="{'background-color': color}"></span>
+        </a>
+      </div>
+    </span>
+
+    <!-- Filtro por profession -->
+    <span>
+      <button id="profesion" type="button" class="btn btn-secondary dropdown-toggle button-filter-custom" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        {{textProfessions}}
+      </button>
+      <div class="dropdown-menu menu-custom" aria-labelledby="profesion">
+        <a class="dropdown-item" (click)="filterProfessions('')">
+          -- Sin filtro --
+        </a>
+        <a class="dropdown-item" *ngFor="let prof of professions" (click)="filterProfessions(prof)">
+          {{prof}}
+        </a>
+      </div>
+    </span>
+
+    <!-- Filtro por edad -->
+    <span>
+      <button id="age" type="button" class="btn btn-secondary dropdown-toggle button-filter-custom" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        {{textAges}}
+      </button>
+      <div id="filterAge" class="dropdown-menu menu-custom" aria-labelledby="age">
+        <a class="dropdown-item" (click)="filterAge(0)">
+          -- Sin filtro --
+        </a>
+        <a class="dropdown-item" *ngFor="let age of ages" (click)="filterAge(age)">
+          {{age}}
+        </a>
+      </div>
+    </span>
+
+    <!-- Reseteo de filtro -->
+    <span>
+      <button type="button" class="btn btn-danger button-filter-custom" (click)="resetFilter()">Resetear Filtros</button>
+    </span>
+  </div>
+</div>

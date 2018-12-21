@@ -1,0 +1,46 @@
+.row-filter-custum{
+    max-width: 1000px;
+    margin: 0rem auto !important;
+}
+
+.button-filter-custom{
+    margin-right: 15px;
+}
+
+.hair_color{
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 15px;
+    margin-bottom: -2px;
+    position: absolute;
+    right: 20px;
+    margin-top: 5px;
+}
+.hair_colorin{
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 15px;
+    margin-bottom: -2px;
+    right: 20px;
+    margin-top: 5px;
+    border: 1px solid white;
+}
+.button-filter-custom{
+    width: 160px;
+    margin-top: 5px; 
+}
+
+.menu-custom{
+    max-height: 250px;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+#filterAge{
+    text-align: center;
+}
