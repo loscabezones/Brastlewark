@@ -29,12 +29,26 @@ Aplicación web que mediante una API, que nos devuelve un listado de nomos, mues
   
   ### Inicio
   
-  Una vez clonado el repositorio, nos dirigmos a la carpeta Brastlewark:
+  Una vez clonado el repositorio, nos dirigmos a la carpeta Brastlewark mediante la consola:
   
+  ~~~ 
+  > cd Brastlewark/  
   ~~~
   
-  cd Brastlewark/
+  Instalamos la dependencias con Node
   
   ~~~
+  > npm install
+  ~~~
+  
+  Una vez instalada todas las dependencias, solo tenemos que levantar la aplicacíon
+  
+  ~~~
+  > ng serve
+  ~~~
+  
+  por defecto tendremos acceso a la web mediante el puerto 4200
+  
+  http://localhost:4200
   
   
