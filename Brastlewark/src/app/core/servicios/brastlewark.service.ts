@@ -13,11 +13,38 @@ export class BrastlewarkService {
   private controlFilter = new BehaviorSubject(false);
   gnomeList: any = [];
   filtrado: any = [];
+  datafilter: {} ;
   
 
   constructor(private http: HttpClient) {
    }
 
+
+   /**
+    * Funcion que envia el objeto datafilter
+    */
+   getDataFilter(){
+     return this.datafilter;
+   }
+
+
+  /**
+   *  Funcion que rellena el objeto datafilter, espera un parametro de tipo objeto
+   * 
+   * @param data /objeto con las siguientes propiedades
+   *  hair : string, 
+   *  professions : string, 
+   *  age : number,
+   *  clean : boolean
+   */
+   postDataFilter(data:object){
+      this.datafilter = data
+   }
+
+
+   /**
+    * Metodo que devuelve el observable que indica si no hay resultados 
+    */
   getControlFilter(){
     return this.controlFilter.asObservable();
   }
@@ -69,10 +96,9 @@ export class BrastlewarkService {
    */
   getSearch(value: string) {
 
-    //si el campo esta vacio buscamos en todos los nomos
-    if(value.length === 0 ){
+    //buscamos en todos los nomos
       this.filtrado = this.gnomeList;
-    }
+
 
     let filtrado = this.filtrado.filter(data => {
       return data.name.toLowerCase().indexOf(value.toLowerCase()) + 1;
@@ -91,7 +117,12 @@ export class BrastlewarkService {
      //actualizamos los filtros
      this.filtrado = filtrado;
 
-    
+     //comprobamos estado del filtro
+     let filtro = this.getDataFilter()
+     if(!(filtro === undefined)){
+       console.log(filtro);
+       this.getFilter(filtro);
+     }
 
   }
 

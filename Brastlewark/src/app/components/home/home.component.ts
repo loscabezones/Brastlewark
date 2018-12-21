@@ -63,7 +63,6 @@ export class HomeComponent implements OnInit {
         if (!(gnomes === null)) {
           this.sumGnomes = 10;
           this.gnomes = gnomes.slice(0, this.numberOfGnomes);
-          console.log(this.gnomes);
         }
 
       },
