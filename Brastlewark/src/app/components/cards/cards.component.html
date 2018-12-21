@@ -4,7 +4,7 @@
     <img  *ngIf="item.thumbnail"  class="card-img-top pruebasimg" [src]="item.thumbnail" [alt]="item.name">
     <div class="card-body">
       <h5 class="card-title">{{ item.name }}</h5>
-      <p class="card-text">Friends:<br>
+      <p class="card-text">Amigos:<br>
           <span *ngFor="let friend of item.friends"  class="badge badge-custom badge-pill badge-primary">{{ friend }}</span>
       </p>
     </div>
