@@ -18,5 +18,4 @@ Aplicación web que mediante una API, que nos devuelve un listado de nomos, mues
   
   Ejemplo: Paginas Mobile.
   
-  ![Home](/img-documentacion/Home-Mobile.PNG "Home")
-  ![Gnome](/img-documentacion/Gnome-Mobile.PNG "Gnome")
+  ![Home](/img-documentacion/Home-Mobile.PNG "Home") ![Gnome](/img-documentacion/Gnome-Mobile.PNG "Gnome")
