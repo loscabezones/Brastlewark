@@ -19,3 +19,22 @@ Aplicación web que mediante una API, que nos devuelve un listado de nomos, mues
   Ejemplo: Paginas Mobile.
   
   ![Home](/img-documentacion/Home-Mobile.PNG "Home") ![Gnome](/img-documentacion/Gnome-Mobile.PNG "Gnome")
+
+## Instalacíon
+
+  Para poder levantar la aplicacíon localmente, se necesita tener instalado:
+  
+  * NODE
+  * ANGULAR CLI
+  
+  ### Inicio
+  
+  Una vez clonado el repositorio, nos dirigmos a la carpeta Brastlewark:
+  
+  ~~~
+  
+  cd Brastlewark/
+  
+  ~~~
+  
+  
