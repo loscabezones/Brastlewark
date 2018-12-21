@@ -22,7 +22,7 @@ Aplicación web que mediante una API, que nos devuelve un listado, muestra infor
 
 ## Instalación
 
-  Para poder levantar la aplicacióon localmente, se necesita tener instalado:
+  Para poder levantar la aplicación localmente, se necesita tener instalado:
   
   * NODE
   * ANGULAR CLI
