@@ -13,6 +13,8 @@ export class GnomeComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   gnome: any = {};
   loading: boolean;
+  error: boolean;
+  mensajeError: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -26,10 +28,14 @@ export class GnomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     this.loading = true;
+    this.error = false;
 
     //recojemos el valor por parametro y llamamos a getnome
     //que busca el nomo solicitado
     this.getgnome();
+
+    //comprobamos errores de conexion
+    this.geterror();
 
     //llamamos a la informacion del nomo solicitado
     this.getInfoGnome();
@@ -40,6 +46,20 @@ export class GnomeComponent implements OnInit, OnDestroy {
     this.activatedRoute.params.subscribe(params => {
       this.brastlewarkService.getgnome(params.id);
     });
+  }
+
+  geterror() {
+    this.brastlewarkService.erroresApi().subscribe(
+      (error: any) => {
+        if (error === true) { 
+          this.loading = false 
+        }
+        this.error = error;
+        this.mensajeError = 'No se ha podido establecer conexion con los datos'
+      },
+      err => { },
+      () => {
+      });
   }
 
 

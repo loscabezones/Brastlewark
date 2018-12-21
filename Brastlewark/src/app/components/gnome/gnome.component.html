@@ -1,7 +1,8 @@
 <app-loading *ngIf="loading" class="m-5"></app-loading>
 
+<app-error *ngIf="error" [mensajeError]="mensajeError"></app-error>
 
-<div *ngIf="!loading" class="gnome-detail-custom">
+<div *ngIf="!error && !loading" class="gnome-detail-custom">
   <h1> {{ gnome.name }} <small> ({{ gnome.age }} Años)</small></h1>
   <hr>
   <div class="row gnome-detail-row-custom">
@@ -32,3 +33,4 @@
     </div>
   </div>
 </div>
+

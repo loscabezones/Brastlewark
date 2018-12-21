@@ -3,10 +3,7 @@
 
 <app-loading *ngIf="loading" class="m-5"></app-loading>
 
-<div *ngIf="error" class="alert alert-danger animated fadeIn">
-    <h3>Error</h3>
-    <p>{{ mensajeError }}</p>
-</div>
+<app-error *ngIf="error" [mensajeError]="mensajeError"></app-error>
 
 <app-cards [items]="gnomes"></app-cards>
 
