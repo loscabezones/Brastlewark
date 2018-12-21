@@ -69,6 +69,16 @@ Aplicación web que mediante una API, que nos devuelve un listado de nomos, mues
    
    ## Imagenes de la Aplicación
    
-   Control de errores:
+   * Control de errores:
    
-  ![Gnome](/img-documentacion/Gnome.PNG "Gnome")
+   ![Gnome](/img-documentacion/errores.PNG "Gnome")
+  
+   * Animacion:
+  
+   ![Gnome](/img-documentacion/Animacion.PNG "Gnome")
+   
+   * Colores dinamicos:
+  
+   ![Gnome](/img-documentacion/Colores.PNG "Gnome")
+  
+ 
