@@ -1,6 +1,6 @@
 # Brastlewark
 
-Aplicación web que mediante una API, que nos devuelve un listado de nomos, muestra información de estos nomos. El conjunto de nomos se puede filtrar por características y a través de un buscador. Se puede visualizar el detalle de cada nomo. Todo el contenido de la web es responsive.
+Aplicación web que mediante una API, que nos devuelve un listado, muestra información sobre nomos. El conjunto de nomos se puede filtrar por características y a través de un buscador. Se puede visualizar el detalle de cada nomo. Todo el contenido de la web es responsive.
 
 ## Vistas
 
@@ -12,36 +12,36 @@ Aplicación web que mediante una API, que nos devuelve un listado de nomos, mues
   
   ![Home](/img-documentacion/Home.PNG "Home")
   
-  Ejemplo: Pagina Gnome
+  Ejemplo: Página Gnome
   
   ![Gnome](/img-documentacion/Gnome.PNG "Gnome")
   
-  Ejemplo: Paginas Mobile.
+  Ejemplo: Páginas Mobile.
   
   ![Home](/img-documentacion/Home-Mobile.PNG "Home") ![Gnome](/img-documentacion/Gnome-Mobile.PNG "Gnome")
 
-## Instalacíon
+## Instalación
 
-  Para poder levantar la aplicacíon localmente, se necesita tener instalado:
+  Para poder levantar la aplicacióon localmente, se necesita tener instalado:
   
   * NODE
   * ANGULAR CLI
   
   ### Inicio
   
-  Una vez clonado el repositorio, nos dirigmos a la carpeta Brastlewark mediante la consola:
+  Una vez clonado el repositorio, nos dirigimos a la carpeta Brastlewark mediante la consola:
   
   ~~~ 
   > cd Brastlewark/  
   ~~~
   
-  Instalamos la dependencias con Node
+  Instalamos las dependencias con Node
   
   ~~~
   > npm install
   ~~~
   
-  Una vez instalada todas las dependencias, solo tenemos que levantar la aplicacíon
+  Una vez instaladas todas las dependencias, solo tenemos que levantar la aplicación
   
   ~~~
   > ng serve
@@ -52,32 +52,32 @@ Aplicación web que mediante una API, que nos devuelve un listado de nomos, mues
   http://localhost:4200
   
   
-  ## Carasteristicas de la aplicacíon
+  ## Características de la aplicación
   
      * Control de errores cuando no podemos obtener datos de la Api
-     * Una unica llamada a la API para obtener todos los datos
-     * Carga dinamica de los elementos en pantalla
+     * Una única llamada a la API para obtener todos los datos
+     * Carga dinámica de los elementos en pantalla
      * Buscador 
-     * Filtrado por caracteristicas
+     * Filtrado por características
      * Animaciones al pasar el raton
-     * Animación de carga de datos con un Spiner
-     * Transacciones suabes al cargar los elementos
+     * Animación de carga de datos con un Spinner
+     * Transacciones suaves al cargar los elementos
      * Aplicación responsive
-     * Muestra de colores dinamicamente segun el valor del color
-     * Separacion de codigo en componentes reutilizables
+     * Muestra de colores dinámicamente segun el valor del color
+     * Separación de código en componentes reutilizables
      * Control de rutas
    
-   ## Imagenes de la Aplicación
+   ## Imágenes de la Aplicación
    
    * Control de errores:
    
    ![Gnome](/img-documentacion/errores.PNG "Gnome")
   
-   * Animacion:
+   * Animación:
   
    ![Gnome](/img-documentacion/Animacion.PNG "Gnome")
    
-   * Colores dinamicos:
+   * Colores dinámicos:
   
    ![Gnome](/img-documentacion/Colores.PNG "Gnome")
   
