@@ -55,7 +55,7 @@ export class GnomeComponent implements OnInit, OnDestroy {
           this.loading = false 
         }
         this.error = error;
-        this.mensajeError = 'No se ha podido establecer conexion con los datos'
+        this.mensajeError = 'No se ha podido establecer conexión con los datos.'
       },
       err => { },
       () => {
