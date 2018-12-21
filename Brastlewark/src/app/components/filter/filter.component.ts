@@ -31,8 +31,7 @@ export class FilterComponent implements OnInit {
     this.dataFilter = {
       hair: "",
       professions: "",
-      age: 0,
-      clean: false
+      age: 0
     }
 
     //texto por defecto de los filtros//
@@ -99,7 +98,6 @@ export class FilterComponent implements OnInit {
       this.ShowColor = true;
     }
 
-    this.dataFilter['clean'] = false;
     this.brastlewarkService.getFilter(this.dataFilter);
 
     this.brastlewarkService.postDataFilter(this.dataFilter);
@@ -115,7 +113,6 @@ export class FilterComponent implements OnInit {
       this.textProfessions = this.text2;
     }
 
-    this.dataFilter['clean'] = false;
     this.brastlewarkService.getFilter(this.dataFilter);
     this.brastlewarkService.postDataFilter(this.dataFilter);
   }
@@ -128,7 +125,6 @@ export class FilterComponent implements OnInit {
       this.textAges = this.text3;
     }
 
-    this.dataFilter['clean'] = false;
     this.brastlewarkService.getFilter(this.dataFilter);
     this.brastlewarkService.postDataFilter(this.dataFilter);
   }
@@ -138,7 +134,6 @@ export class FilterComponent implements OnInit {
     this.dataFilter['age'] = 0;
     this.dataFilter['professions'] = '';
     this.dataFilter['hair'] = '';
-    this.dataFilter['clean'] = true;
     this.colorin = '#6c757d';
     this.ShowColor = false;
 

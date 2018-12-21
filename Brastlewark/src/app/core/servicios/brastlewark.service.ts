@@ -35,7 +35,7 @@ export class BrastlewarkService {
    *  hair : string, 
    *  professions : string, 
    *  age : number,
-   *  clean : boolean
+   *  
    */
    postDataFilter(data:object){
       this.datafilter = data
@@ -132,12 +132,6 @@ export class BrastlewarkService {
    * @param data / objeto con las propiedades y valores a filtrar
    */
   getFilter(data:object){
-
-    //si se limpia el filtro se rellena los resultados con todos los nomos
-
-      if (data['clean'] === true){
-        this.filtrado = this.gnomeList;
-      }
 
     //se aplica el filtro a los resultados
 
