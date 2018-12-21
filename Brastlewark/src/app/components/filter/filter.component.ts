@@ -11,12 +11,15 @@ export class FilterComponent implements OnInit {
   dataFilter: {} = {};
   textHairColors: string;
   textProfessions: string;
+  textAges: string;
   colorin: string;
   text1:string;
   text2:string;
+  text3:string;
   ShowColor:boolean = false;
   @Input() hairColors: string[]
   @Input() professions: string[]
+  @Input() ages: number[]
 
   constructor( private brastlewarkService:BrastlewarkService ) { }
 
@@ -32,8 +35,10 @@ export class FilterComponent implements OnInit {
     //texto por defecto de los filtros//
     this.text1 = "Color de pelo"
     this.text2 = "Profesión"
+    this.text3 = "Edad"
     this.textHairColors = this.text1;
     this.textProfessions = this.text2;
+    this.textAges = this.text3;
   }
 
   filterColor(data: string) {
@@ -57,6 +62,13 @@ export class FilterComponent implements OnInit {
   filterProfessions(data: string) {
     this.dataFilter['professions'] = data;
     this.textProfessions = data;
+
+    this.brastlewarkService.getFilter(this.dataFilter);
+  }
+
+  filterAge(data:number){
+    this.dataFilter['age'] = data;
+    this.textAges = data.toString();
 
     this.brastlewarkService.getFilter(this.dataFilter);
   }

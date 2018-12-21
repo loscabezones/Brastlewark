@@ -74,11 +74,16 @@ export class BrastlewarkService {
    */
   getFilter(data:object){
 
+    console.log(data);
 
       let filtrado = this.filtrado.filter(element => {
-        return data['hair'] ? (element.hair_color === data['hair']) : true;
+        return     (data['hair'] ? element.hair_color === data['hair'] : true) && 
+                   (data['professions'] ? element.professions.includes(data['professions']) : true) &&
+                   (data['age'] ?  element.age === parseInt(data['age']) : true);
             
       });
+
+      console.log(filtrado);
       this.gnomes.next(filtrado);
 
 

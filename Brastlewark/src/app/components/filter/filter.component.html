@@ -1,5 +1,7 @@
 <div class="row row-filter-custum">
   <div class="col col-custom-filter">
+
+    <!-- Filtro por color -->
     <span>
       <button id="hairColor" type="button" class="btn btn-secondary dropdown-toggle button-filter-custom" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
@@ -15,17 +17,31 @@
       </div>
     </span>
 
+    <!-- Filtro por profession -->
     <span>
-      <button id="hairColor" type="button" class="btn btn-secondary dropdown-toggle button-filter-custom" data-toggle="dropdown"
+      <button id="profesion" type="button" class="btn btn-secondary dropdown-toggle button-filter-custom" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         {{textProfessions}}
       </button>
-      <div class="dropdown-menu menu-custom" aria-labelledby="hairColor">
+      <div class="dropdown-menu menu-custom" aria-labelledby="profesion">
         <a class="dropdown-item" *ngFor="let prof of professions" (click)="filterProfessions(prof)">
           {{prof}}
         </a>
       </div>
     </span>
+
+    <!-- Filtro por edad -->
+    <span>
+        <button id="age" type="button" class="btn btn-secondary dropdown-toggle button-filter-custom" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{textAges}}
+        </button>
+        <div id="filterAge" class="dropdown-menu menu-custom" aria-labelledby="age">
+          <a class="dropdown-item" *ngFor="let age of ages" (click)="filterAge(age)">
+            {{age}}
+          </a>
+        </div>
+      </span>
 
   </div>
 </div>

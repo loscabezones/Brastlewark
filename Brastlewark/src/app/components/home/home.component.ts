@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   sumGnomes: number;
   hairColors: string[] = [];
   professions: string[] = [];
+  ages:number [] = [];
   error: boolean = false;
   mensajeError: string;
   loading: boolean;
@@ -52,6 +53,7 @@ export class HomeComponent implements OnInit {
           //obtenemos todos los valores posibles de las propiedades para utilizarlo en los filtros
           this.getHairColor();
           this.getProfessions();
+          this.getAge();
         }
 
         //mostramos los primeros 10 elemenots de los nomos
@@ -93,11 +95,9 @@ export class HomeComponent implements OnInit {
   getHairColor() {
 
     let gnomes = this.brastlewarkService.getGnomeList();
-    console.log(gnomes);
     if(gnomes.length === 0){
       gnomes = this.allGnomes;
     }
-
 
     gnomes.forEach(gnome => {
       this.hairColors.push(gnome.hair_color);
@@ -106,10 +106,13 @@ export class HomeComponent implements OnInit {
     this.hairColors = this.eliminateDuplicates(this.hairColors);
   }
 
+  /**
+   * Funcion que guarda en el array professions
+   * todas las professiones de la propiedad professiones sin repetir de toda la lista de nomos
+   */
   getProfessions(){
 
     let gnomes = this.brastlewarkService.getGnomeList();
-    console.log(gnomes);
     if(gnomes.length === 0){
       gnomes = this.allGnomes;
     }
@@ -121,6 +124,23 @@ export class HomeComponent implements OnInit {
       });
     });
     this.professions = this.eliminateDuplicates(this.professions);
+  }
+
+  /**
+   * Funcion que guarda en el array ages
+   * todas las edades de la propiedad age sin repetir de toda la lista de nomos
+   */
+  getAge(){
+    let gnomes = this.brastlewarkService.getGnomeList();
+    if(gnomes.length === 0){
+      gnomes = this.allGnomes;
+    }
+
+    gnomes.forEach(gnome => {
+      this.ages.push(gnome.age);
+    });
+
+    this.ages = this.eliminateDuplicates(this.ages);
   }
 
   /**
